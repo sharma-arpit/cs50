@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>{{ total }}</td>
+            </tr>
+        </tfoot>
+        <tbody>
+                {% for i in range(length) %}
+                    {% if symare[i]["SUM(shares)"] != 0 %}
+                        <tr>
+                            <td>{{ symare[i]["symbol"] }}</td>
+                            <td>{{ name[i] }}</td>
+                            <td>{{ symare[i]["SUM(shares)"] }}</td>
+                            <td>{{ price[i] }}</td>
+                            <td>{{ total_price[i] }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            <tr>
+                <td colspan="4">CASH</td>
+                <td>{{ cash }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

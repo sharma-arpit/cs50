@@ -1,0 +1,7 @@
+USE: 
+
+~/workspace/ $ gcc program_name.c -nostartfiles
+~/workspace/ $ ./a.out
+
+
+to execute the program without having main function in it.

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Football{% endblock %}
+{% block text %}Statistics{% endblock %}
+
+{% block body %}
+    <table class="table table-striped">
+        <tbody>
+    <tr>
+            <td>{{ res[0][0] }}({{ res[1][0]}})</td>    <td>{{status}}</td>    <td>{{res[0][1]}}({{res[1][1]}})</td>
+                </tr>
+                <tr>
+                    <td>{{res[2][0]}}</td><td>      </td><td>{{res[2][1]}}</td>
+                </tr>
+            {% for i in range(7) %}
+                <tr>
+                    <td>{{ stats[i][0] }}</td>
+                    <td>{{ l[i] }}</td>
+                    <td>{{ stats[i][1] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

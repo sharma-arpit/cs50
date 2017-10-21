@@ -1,0 +1,2 @@
+gcc program_name.c -nostartfiles
+./a.out

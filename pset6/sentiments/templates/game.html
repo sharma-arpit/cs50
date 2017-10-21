@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}Football{% endblock %}
+{% block text %}Game_ID{% endblock %}
+
+{% block body %}
+<form action="{{ url_for('result') }}" class="form-inline" method="get">
+    <div class="form-group">
+      <label class="sr-only" for="game_id">game_id</label>
+      <input class="form-control" name="game_id" placeholder="game_id" type="text"/>
+  </div>
+  <button class="btn btn-default" type="submit">Game</button>
+</form>
+{% endblock %}
