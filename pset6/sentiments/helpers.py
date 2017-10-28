@@ -53,7 +53,7 @@ def get_user_timeline(screen_name, count=200):
     # https://dev.twitter.com/rest/reference/get/statuses/user_timeline
     # https://github.com/ryanmcgrath/twython/blob/master/twython/endpoints.py
     try:
-        twitter = Twython('ehxeZAh1xOjo6CsHZSj601gp3', '4RrlHDsVFq3PToyf9b7MtuECi6qnyC5j7DmvxsNDGRcFuUiOKY')
+        twitter = Twython('API_KEY', 'API_SECRET')
         user = twitter.lookup_user(screen_name=screen_name)
         if user[0]["protected"]:
             return None
