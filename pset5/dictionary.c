@@ -23,6 +23,15 @@ node;
 //bool hash(node *);
 node* hashtable[HASHTABLE_SIZE] = {NULL};
 
+int hash(char* word)
+{
+    unsigned int h = 0;
+    for (int i = 0, n = strlen(word); i < n; i++)
+        h = (h << 2) ^ word[i];
+    return h % HASHTABLE_SIZE;
+}
+
+
 /**
  * Returns true if word is in dictionary else false.
  */
