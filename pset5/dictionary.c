@@ -13,12 +13,15 @@
 #include <stdlib.h>
 #include "dictionary.h"
 
-
+#define HASHTABLE_SIZE 100000
+unsigned nword =0;
 typedef struct list{
-    char key[45];
+    char word[46];
     struct list* next;
 }
 node;
+//bool hash(node *);
+node* hashtable[HASHTABLE_SIZE] = {NULL};
 
 /**
  * Returns true if word is in dictionary else false.
