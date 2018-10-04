@@ -25,7 +25,36 @@ node;
  */
 bool check(const char* word)
 {
-    // TODO
+        int l = strlen(word);
+    char *copy = malloc(l);
+    
+    for (int i = 0; i < l; i++)
+        copy[i] = tolower(word[i]);
+    
+    copy[l] = '\0';
+
+    int index = hash(copy);
+
+    node* entry = hashtable[index];
+    if (entry)
+    {
+        // point a cursor node to the head node
+        node* cursor = entry;
+
+        // loop through the nodes while a next pointer isn't null
+        while (cursor->next != NULL)
+            {
+                if (strcmp(copy, cursor->word) == 0)
+                    return true;
+
+                cursor = cursor->next;
+            };
+
+        if (strcmp(copy, cursor->word) == 0)
+    		return true;
+
+			cursor = cursor->next;
+    }
     return false;
 }
 
