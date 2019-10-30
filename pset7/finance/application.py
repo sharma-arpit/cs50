@@ -74,6 +74,7 @@ def buy():
     from datetime import datetime
     d = datetime.now()
     time = d.strftime('%m/%d/%Y %H:%M:%S')
+    print("Transaction time:", time)
 
     if request.method == "POST":
         if not request.form.get("symbol") or not request.form.get("shares"):
@@ -209,6 +210,7 @@ def sell():
         from datetime import datetime
         d = datetime.now()
         time = d.strftime('%m/%d/%Y %H:%M:%S')
+        print("Transaction time:", time)
 
         if not request.form.get("symbol") or not request.form.get("shares"):
             return apology("Please fill all the fields")
@@ -271,6 +273,6 @@ def change_pass():
 @app.route("/selhistory", methods = ["GET"])
 @login_required
 def selhistory():
-
+    # login is required for this function to work
     data = db.execute("SELECT * FROM portfolio WHERE user_id=:id", id=session["user_id"])
     return render_template("selhistory.html", data=data, l=len(data))
