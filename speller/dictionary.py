@@ -18,3 +18,5 @@ class Dictionary:
 
     def unload(self):
         return True
+    def __str__(self):
+        return "It is a dictionary object"
