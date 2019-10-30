@@ -1,6 +1,4 @@
-#Lab No:3
-# Title : Jacobi and Gauss Seidel Method
-# Date: 22/08/2017
+# Jacobi and seidel method
 
 
 print('No.of variables:')
@@ -20,14 +18,14 @@ for x in range(n):
 print('Choose a method-')
 print('Enter 0 for Jacobi Method')
 print('Enter 1 for Gauss Seidel')
+method= int(input())
 
 
 sol=[0 for x in range(n)]
 sol_new=[0 for x in range(n)]
-method=int(input())
 
 
-while(1):
+while(True):
     for x in range(n):
         sum=0
         for i in range(n):
@@ -44,10 +42,10 @@ while(1):
         new[x]=abs(sol_new[x]-sol[x])
     flag=0
     for i in range(n):
-        if(new[i] < 0.0000000000000001):
-            flag=flag+1
+        if(new[i] < 0.00000000001):
+            flag+=1
     if (flag==n):
         break
-
+# saving new solution into old variable
     for l in range(n):
         sol[l]=sol_new[l]
